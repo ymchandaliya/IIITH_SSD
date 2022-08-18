@@ -1,0 +1,2 @@
+USE COMPANY;
+select DEPARTMENT.Dnumber,DEPARTMENT.Dname,x.c from DEPARTMENT,(select Dnumber,count(distinct Dlocation) as c from DEPT_LOCATIONS group by Dnumber) as x,(select Essn,count(Relationship),Sex from DEPENDENT group by Essn,Sex having Sex="F") as v;
