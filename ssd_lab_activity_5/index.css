@@ -1,0 +1,22 @@
+body{
+    padding-left: 20;
+    padding-top: 30;
+    padding-right: 20;
+    padding-bottom: 30;
+    text-align: center;
+    background-image: linear-gradient(to bottom, gray, white);
+}
+.container{
+    background-color:white;
+    padding-bottom: 40;
+    padding-top: 40;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    border-radius: 20px;
+    box-shadow: 10px 5px rgb(234, 228, 228);
+}
+
+input:hover{
+    border-color: red;
+}

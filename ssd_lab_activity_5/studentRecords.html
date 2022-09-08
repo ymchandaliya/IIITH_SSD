@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="std.css">
+
+<script>
+    function addData(){
+        rNo = document.getElementById("rNo");
+        sName = document.getElementById("sName");
+        if(rNo.value == "" || sName.value == "")
+            return;
+        table = document.getElementById("StudentTable");
+        newIndex = table.rows.length;
+        if(newIndex != 0){
+            console.log(newIndex);
+            newRow = table.insertRow(newIndex);
+            col1 = newRow.insertCell(0);
+            col2 = newRow.insertCell(1);
+            col1.innerHTML = rNo.value;
+            col2.innerHTML = sName.value;
+            rNo.value = "";
+            sName.value = "";
+
+        }
+        else{
+            console.log(newIndex);
+            headRow = table.createTHead();
+            newRow = headRow.insertRow();
+            col1 = newRow.insertCell(0);
+            col2 = newRow.insertCell(1);
+            col1.bgColor = "#32a852";
+            col2.bgColor = "#32a852";
+
+            col1.innerHTML = "Roll Number";
+            col2.innerHTML = "Student Name";
+
+
+            newRow1 = table.insertRow(newIndex+1);
+            col11 = newRow1.insertCell(0);
+            col21 = newRow1.insertCell(1);
+            col11.innerHTML = rNo.value;
+            col21.innerHTML = sName.value;
+            rNo.value = "";
+            sName.value = "";
+
+        }
+
+    }
+
+    function deleteLast(){
+        table = document.getElementById("StudentTable");
+        newIndex = table.rows.length;
+        table.deleteRow(newIndex-1);
+        newIndex = table.rows.length;
+
+        if(newIndex==1){
+            table.deleteRow(0);
+        }
+
+    }
+</script>
+
+    <title>studentRecords</title>
+</head>
+
+
+<body>
+    <div class="container">
+
+        <h3>Welcome to Student Data</h3>
+        <label for="rNo"></label>
+        <input type="text" placeholder="Roll No." id="rNo">
+        <label for="rNo"></label>
+        <input type="text" placeholder="Name" id="sName">
+        <label for="Add"></label>
+        <input type="submit" value="Add" onclick="addData()" id="add">
+
+        <br><br> 
+        <center>
+            <table id="StudentTable">
+            </table>
+    
+        </center>   
+        <br><br>
+        <input type="button" value="Delete Last Entry" onclick="deleteLast()" id="delete">
+    </div>
+
+</body>
+
+</html>
