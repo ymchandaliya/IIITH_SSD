@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>Office form</title>
+        <script src="index.js"></script>
+        <link rel="stylesheet" href="index.css">
+        <!-- <style>
+            #error{
+                color: red;
+            }
+
+            #div1{
+                border: 2px solid black;
+                height: 250px;
+                width: 150px;
+            }
+            #div2{
+                border: 2px solid black;
+                height: 250px;
+                width: 150px;
+            }
+        </style> -->
+    </head>
+
+    <body>
+        <center><h3>Team Form</h3></center>
+        <table>
+            <form action="" onsubmit="return showData()">
+                <tr>
+                    <td><label for="manager"><b>Manager Name</b></label></td>
+                    
+                    <td><input type="text" name="manager" id="mngr" required></td>
+                    <!-- <br><br> -->
+    
+                </tr>
+                
+                <tr>
+                    <td><label for="email"> <b>Group Email</b> </label></td>
+                    <td><input type="email" name="email" id="email" required></td>
+                    <!-- <br><br> -->
+    
+                </tr>
+                
+                <tr>
+                    <td><label for="uname"> <b>Username</b> </label></td>
+                    <td><input type="text" name="uname" id="uname" onkeyup="checkUname()" required><span id="error"></span></td>
+                    <!-- <br><br>     -->
+                </tr>
+                
+                <tr>
+                    <td><label for="password"> <b>password</b> </label></td>
+                    <td><input type="password" name="password" id="pass" required></td>
+                    <!-- <br><br>     -->
+                </tr>
+                
+                <tr>
+                    <td><label for="cfpassword"> <b>confirm password</b> </label></td>
+                    <td><input type="password" name="cfpassword" id="cfp" required onblur="checkforp()"></td>
+                    <br><br>
+    
+                </tr>
+                
+                <tr>
+                    <td><label for="tl"> <b>Team Lead</b> </label></td>
+                    <td><select name="tl" id="tl" required>
+                            <option value="Adam">Adam</option>
+                            <option value="Eve">Eve</option>
+                            <option value="Alice">Alice</option>
+                            <option value="Bob">Bob</option>
+                    </select></td>
+        
+                    <br><br>
+    
+                </tr>
+
+                <tr>
+                   <td><div id="div1" ondrop="dropit(event)" ondragover="allowit(event)">
+                        <ul>
+                            <li id="done" draggable="true" ondragstart="drag(event)">Alice</li>
+                            <li id="dtwo" draggable="true" ondragstart="drag(event)">Hana</li>
+                            <li id="dthree" draggable="true" ondragstart="drag(event)">Hose</li>
+                            <li id="dfour" draggable="true" ondragstart="drag(event)">Josh</li>
+                            <li id="dfive" draggable="true" ondragstart="drag(event)">Hose</li>
+                            <li id="dsix" draggable="true" ondragstart="drag(event)">Josh</li>
+                        </ul>
+
+                    </div></td>
+
+                    <td><div id="div2" ondrop="dropit(event)" ondragover="allowit(event)">
+                        <ul id="div9">
+
+                        </ul>
+
+                    </div></td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" ></td>
+                </tr>
+            </form>
+        </table>
+
+    </body>
+</html>
